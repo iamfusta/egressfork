@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EgressFork</title>
+<meta name="description" content="EgressFork: Windows'ta her uygulamanın internete hangi bağlantıdan çıkacağını seçin. Choose which connection each Windows app uses.">
+<style>
+  :root { --zemin: #fbfaf8; --metin: #1d1c1a; --soluk: #5f5b55; --cizgi: #e3dfd8; --kutu: #f2efea; }
+  @media (prefers-color-scheme: dark) { :root { --zemin: #161514; --metin: #ece9e4; --soluk: #a39e96; --cizgi: #2e2c29; --kutu: #1f1e1c; } }
+  body { margin: 0; background: var(--zemin); color: var(--metin); font: 16px/1.6 "Segoe UI", system-ui, sans-serif; }
+  main { max-width: 72ch; margin: 0 auto; padding: 40px 16px 64px; }
+  h1 { font-size: 2.2rem; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 8px; }
+  h2 { font-size: 1.2rem; margin: 40px 0 8px; }
+  .alt { color: var(--soluk); font-size: 1.1rem; margin: 0 0 24px; text-wrap: pretty; }
+  img { width: 100%; height: auto; border: 1px solid var(--cizgi); border-radius: 6px; display: block; margin: 16px 0 4px; }
+  figcaption { color: var(--soluk); font-size: 0.9rem; }
+  ol li, ul li { margin: 4px 0; }
+  .not { background: var(--kutu); border-radius: 6px; padding: 12px 16px; }
+  hr { border: 0; border-top: 1px solid var(--cizgi); margin: 56px 0; }
+  nav, footer { color: var(--soluk); }
+  nav a, footer a { color: var(--soluk); }
+  a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+</style>
+</head>
+<body>
+<main>
+<nav><a href="#tr">Türkçe</a> · <a href="#en">English</a> · <a href="gizlilik.html">Gizlilik / Privacy</a></nav>
+
+<section id="tr" lang="tr">
+<h1>EgressFork</h1>
+<p class="alt">Her uygulamanın internete hangi bağlantıdan çıkacağını siz seçin. Oyun kablodan, tarayıcı Wi-Fi'dan, sohbet bir tünelden; geri kalan her şey Windows'un seçtiği yoldan.</p>
+
+<figure>
+  <img src="ekran/tr-2-akislar.png" width="1366" height="768" alt="Akışlar sayfası: uygulama grupları, her grubun çıkış kartı, tüneli ve reklam engelleme ayarı">
+  <figcaption>Akışlar: uygulamaları gruplayın, her gruba bir çıkış seçin.</figcaption>
+</figure>
+
+<h2>Neler yapar</h2>
+<ul>
+  <li><strong>Akışlar:</strong> Uygulamaları gruplayın; her grup için çıkış kartı, tünel ve reklam engelleme seçin.</li>
+  <li><strong>Çıkış:</strong> Wi-Fi, Ethernet, USB ile telefon interneti ya da bilgisayardaki bir VPN uygulamasının ağ kartı.</li>
+  <li><strong>Tünel:</strong> Cloudflare WARP ya da kendi WireGuard sunucunuz.</li>
+  <li><strong>Reklam engelleme:</strong> Yalnız seçtiğiniz akışlarda, istediğiniz filtre listeleriyle.</li>
+  <li><strong>Ağ kartları:</strong> Her kartın anlık hızı ve son 60 saniyesi.</li>
+  <li><strong>İnternet bekçisi:</strong> Tünel 45 saniye internete ulaşamazsa kendiliğinden kapanır, ağınız eski haline döner.</li>
+</ul>
+
+<h2>Nasıl kullanılır</h2>
+<ol>
+  <li>EgressFork'i açın ve yönetici iznini onaylayın. Dil sol alttan değişir.</li>
+  <li><strong>Akışlar</strong> sayfasında iki örnek akış hazırdır (Discord; Chrome reklam engellemeli). İsterseniz <strong>Yeni akış</strong> açın. Sonra <strong>Uygulamalar</strong> sayfasında uygulamanın satırındaki sağ düğmeye basıp akışı seçin; listede olmayan program için <strong>Başka uygulama</strong>.</li>
+  <li><strong>Akışlar</strong> sayfasında akışın <strong>çıkış kartını</strong> seçin. Tünel isterseniz WARP ya da “Kendi sunucum” ile bir WireGuard <code>.conf</code> dosyası verin.</li>
+  <li>Reklam engelleme istiyorsanız akışta açın, <strong>Reklam engeli</strong> sayfasında <strong>Güncelle</strong>'ye basıp listeyi indirin.</li>
+  <li><strong>Bağlantı</strong> sayfasındaki anahtarı açın. Kapatınca ağınız eski haline döner.</li>
+</ol>
+
+<figure>
+  <img src="ekran/tr-1-baglanti.png" width="1366" height="768" alt="Bağlantı sayfası: açma kapama anahtarı ve akışların durumu" loading="lazy">
+  <figcaption>Bağlantı: tek anahtar, akışların durumu.</figcaption>
+</figure>
+<figure>
+  <img src="ekran/tr-3-reklam.png" width="1366" height="768" alt="Reklam sayfası: filtre listeleri ve güncelleme düğmesi" loading="lazy">
+  <figcaption>Reklam engeli: filtre listeleri.</figcaption>
+</figure>
+
+<h2>Gerekenler</h2>
+<ul>
+  <li>Windows 10 ya da 11 (64 bit). Ağ kartı oluşturmak için yönetici izni.</li>
+  <li>WARP tüneli için ücretsiz Cloudflare WARP uygulaması ayrıca kurulu olmalı. Kendi WireGuard sunucunuz ya da yalnız ağ kartları için gerekmez.</li>
+</ul>
+
+<h2>Sorun olursa</h2>
+<ul>
+  <li><strong>İnternet gitti:</strong> Bağlantı anahtarını kapatın; ağ eski haline döner. Bekçi bunu 45 saniye sonra kendisi de yapar.</li>
+  <li><strong>Bir uygulama yanlış yoldan çıkıyor:</strong> Uygulamalar sayfasında doğru akışta olduğuna bakın; bazı uygulamalar birden çok program çalıştırır (ör. güncelleyici), onları da ekleyin.</li>
+  <li><strong>Destek:</strong> Uygulamadaki <strong>Teşhis raporu</strong> düğmesi bir metin dosyası hazırlar; isterseniz bize gönderin: <a href="mailto:fustademo@gmail.com">fustademo@gmail.com</a>.</li>
+</ul>
+
+<p class="not">Veri toplamaz: kullanım istatistiği, reklam kimliği yoktur; ayarlar yalnız bilgisayarınızda durur. Ayrıntı: <a href="gizlilik.html">gizlilik politikası</a>.</p>
+</section>
+
+<hr>
+
+<section id="en" lang="en">
+<h1>EgressFork</h1>
+<p class="alt">Choose which connection each Windows app uses. Your game on the wired connection, your browser on Wi-Fi, your chat app through a tunnel; everything else keeps the route Windows picks.</p>
+
+<figure>
+  <img src="ekran/en-2-akislar.png" width="1366" height="768" alt="Flows page: app groups with their exit card, tunnel and ad blocking setting" loading="lazy">
+  <figcaption>Flows: group apps and pick an exit for each group.</figcaption>
+</figure>
+
+<h2>What it does</h2>
+<ul>
+  <li><strong>Flows:</strong> group apps and choose exit card, tunnel and ad blocking for each group.</li>
+  <li><strong>Exit:</strong> Wi-Fi, Ethernet, USB phone tethering or the network card of a VPN app on your PC.</li>
+  <li><strong>Tunnel:</strong> Cloudflare WARP or your own WireGuard server.</li>
+  <li><strong>Ad blocking:</strong> only in the flows you choose, with the filter lists you want.</li>
+  <li><strong>Network adapters:</strong> live speed and the last 60 seconds of each card.</li>
+  <li><strong>Internet watchdog:</strong> if the tunnel cannot reach the internet for 45 seconds it closes itself and your network returns to normal.</li>
+</ul>
+
+<h2>How to use it</h2>
+<ol>
+  <li>Open EgressFork and accept the administrator prompt. The language is at the bottom left.</li>
+  <li>On the <strong>Flows</strong> page two example flows are ready (Discord; Chrome with ad blocking). Create a <strong>New flow</strong> if you like. Then on the <strong>Applications</strong> page press the button on the right of the app's row and pick the flow; for a program that is not listed, use <strong>Other application</strong>.</li>
+  <li>On the <strong>Flows</strong> page choose the flow's <strong>Exit adapter</strong>. For a tunnel, pick WARP or give a WireGuard <code>.conf</code> file under “My own server”.</li>
+  <li>For ad blocking, turn it on in the flow and press <strong>Update</strong> on the <strong>Ad blocking</strong> page to download the list.</li>
+  <li>Turn on the switch on the <strong>Connection</strong> page. Turning it off returns your network to normal.</li>
+</ol>
+
+<figure>
+  <img src="ekran/en-1-baglanti.png" width="1366" height="768" alt="Connection page: on/off switch and the state of each flow" loading="lazy">
+  <figcaption>Connection: one switch, the state of each flow.</figcaption>
+</figure>
+<figure>
+  <img src="ekran/en-3-reklam.png" width="1366" height="768" alt="Ad blocking page: filter lists and the update button" loading="lazy">
+  <figcaption>Ad blocking: filter lists.</figcaption>
+</figure>
+
+<h2>Requirements</h2>
+<ul>
+  <li>Windows 10 or 11 (64-bit). Administrator rights to create the network adapter.</li>
+  <li>The WARP tunnel needs the free Cloudflare WARP client installed separately. Not needed for your own WireGuard server or for network cards only.</li>
+</ul>
+
+<h2>If something goes wrong</h2>
+<ul>
+  <li><strong>No internet:</strong> turn the connection switch off; the network returns to normal. The watchdog also does this by itself after 45 seconds.</li>
+  <li><strong>An app uses the wrong route:</strong> check on the Applications page that it is in the right flow; some apps run several programs (an updater, for example), add those too.</li>
+  <li><strong>Support:</strong> the <strong>Diagnostic report</strong> button in the app writes a text file; send it to us if you like: <a href="mailto:fustademo@gmail.com">fustademo@gmail.com</a>.</li>
+</ul>
+
+<p class="not">No data collection: no usage statistics, no advertising ID; settings stay on your PC. Details: <a href="gizlilik.html">privacy policy</a>.</p>
+</section>
+
+<footer><p>EgressFork · iamfusta · Açık kaynaklı <a href="https://github.com/SagerNet/sing-box/tree/v1.14.4">sing-box 1.14.4</a> (GPL-3.0) ile çalışır / powered by it.</p></footer>
+</main>
+</body>
+</html>

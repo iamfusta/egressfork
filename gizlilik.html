@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EgressFork gizlilik politikası</title>
+<style>
+  :root { --zemin: #fbfaf8; --metin: #1d1c1a; --soluk: #5f5b55; --cizgi: #e3dfd8; }
+  @media (prefers-color-scheme: dark) { :root { --zemin: #161514; --metin: #ece9e4; --soluk: #a39e96; --cizgi: #2e2c29; } }
+  body { margin: 0; background: var(--zemin); color: var(--metin); font: 16px/1.6 "Segoe UI", system-ui, sans-serif; }
+  main { max-width: 68ch; margin: 0 auto; padding: 40px 16px 64px; }
+  h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 4px; }
+  h2 { font-size: 1.1rem; margin: 32px 0 8px; }
+  p, li { color: var(--metin); }
+  .tarih { color: var(--soluk); margin: 0 0 24px; }
+  hr { border: 0; border-top: 1px solid var(--cizgi); margin: 48px 0; }
+  nav a { color: var(--soluk); }
+</style>
+</head>
+<body>
+<main>
+<nav><a href="#tr">Türkçe</a> · <a href="#en">English</a></nav>
+
+<section id="tr" lang="tr">
+<h1>EgressFork gizlilik politikası</h1>
+<p class="tarih">Son güncelleme: 13 Kasım 2026 · Yayıncı: iamfusta</p>
+
+<h2>Kısaca</h2>
+<p>EgressFork hiçbir kişisel veriyi toplamaz, saklamak için bir sunucuya göndermez ve satmaz. Kullanım istatistiği, reklam kimliği ya da çökme raporu gönderen bir kod içermez.</p>
+
+<h2>Bilgisayarınızda işlenenler</h2>
+<ul>
+  <li><strong>Uygulamaların adları ve bağlantıları:</strong> Hangi uygulamanın hangi ağ kartından ya da tünelden çıkacağını seçebilmeniz için yalnız bilgisayarınızda okunur. Bir akışa eklediğiniz uygulamaların program adları (ör. <code>Discord.exe</code>) ayar dosyasına yazılır; bağlantılar kaydedilmez. Hiçbiri gönderilmez.</li>
+  <li><strong>Ağ kartlarının adları ve kimlikleri:</strong> Seçtiğiniz kartı yeniden bulabilmek için ayar dosyasına yazılır.</li>
+  <li><strong>Ayarlar, reklam listeleri ve günlük:</strong> <code>%ProgramData%\EgressFork</code> klasöründe durur; bu klasöre yalnız yöneticiler yazabilir. Uygulama kaldırılınca bu klasör kendiliğinden silinmez; isterseniz siz silebilirsiniz.</li>
+  <li><strong>Günlük (egressfork.log):</strong> Yalnız uyarı ve hataları tutar; kurulamayan bağlantıların hedef adresleri bu satırlarda yer alabilir. Bilgisayarınızda kalır ve her bağlantı açılışında silinip yeniden başlar.</li>
+  <li><strong>WireGuard dosyası:</strong> “Kendi sunucum” seçeneğinde verdiğiniz dosya aynı klasöre kopyalanır. İçindeki anahtar yalnız sizin sunucunuza bağlanmak için kullanılır.</li>
+  <li><strong>Teşhis raporu:</strong> Yalnız düğmeye bastığınızda oluşturulur ve bilgisayarınızda kalır. Ağ kartlarınızın adlarını ve adreslerini, ayarlarınızı ve günlüğün son 40 satırını içerir; WireGuard anahtarı içermez. Paylaşıp paylaşmamak size kalmıştır.</li>
+</ul>
+
+<h2>İnternete giden istekler</h2>
+<ul>
+  <li><strong>Alan adı sorguları:</strong> Bağlantı açıkken alan adı (DNS) sorguları şifreli olarak Cloudflare’in 1.1.1.1 sunucusuna gider. Cloudflare bu sorguları kendi gizlilik politikasına göre işler.</li>
+  <li><strong>Reklam listeleri:</strong> Reklam engellemeyi açarsanız listeler, ekranda gördüğünüz adreslerden indirilir.</li>
+  <li><strong>Tünel:</strong> WARP seçilirse trafik Cloudflare WARP üzerinden, “Kendi sunucum” seçilirse sizin sunucunuz üzerinden gider. Bu hizmetlerin kendi politikaları geçerlidir.</li>
+  <li><strong>İnternet denetimi:</strong> Bağlantıyı açtıktan sonra, internetin gerçekten çalıştığını anlamak için 15 saniyede bir Cloudflare’e (1.1.1.1) içeriksiz bir HTTPS isteği gider; yanıt gelmezse Quad9’a (dns.quad9.net) da sorulur. Bekçi tüneli kapattıktan sonra da internet dönene kadar sürer; bağlantıyı kapatınca durur. Bu isteklerde sizinle ilgili bilgi yoktur.</li>
+  <li><strong>Cloudflare WARP:</strong> Tünelli bir akış WARP kullanırsa EgressFork, WARP uygulamasını “proxy” kipine alır ve bağlantıyı kapatınca önceki kipine döndürür.</li>
+</ul>
+
+<h2>Çocuklar</h2>
+<p>EgressFork çocuklara yönelik değildir ve çocuklardan bilerek veri toplamaz.</p>
+
+<h2>Değişiklikler ve iletişim</h2>
+<p>Bu politika değişirse bu sayfa ve tarih güncellenir. Sorularınız için: <a href="mailto:fustademo@gmail.com">fustademo@gmail.com</a> (uygulamadaki <strong>İletişim</strong> bağlantısı da buraya yazar).</p>
+</section>
+
+<hr>
+
+<section id="en" lang="en">
+<h1>EgressFork privacy policy</h1>
+<p class="tarih">Last updated: 13 November 2026 · Publisher: iamfusta</p>
+
+<h2>In short</h2>
+<p>EgressFork does not collect personal data, does not send it to any server for storage and does not sell it. It contains no code that sends usage statistics, advertising identifiers or crash reports.</p>
+
+<h2>Processed on your computer</h2>
+<ul>
+  <li><strong>Names and connections of apps:</strong> read only on your computer so you can choose which network card or tunnel each app uses. The program names of apps you add to a flow (for example <code>Discord.exe</code>) are written to the settings file; connections are not stored. Nothing is sent.</li>
+  <li><strong>Network card names and identifiers:</strong> written to the settings file so the chosen card can be found again.</li>
+  <li><strong>Settings, ad lists and the log:</strong> kept in <code>%ProgramData%\EgressFork</code>, which only administrators can write to. Uninstalling does not remove this folder; you can delete it yourself.</li>
+  <li><strong>Log (egressfork.log):</strong> holds warnings and errors only; these lines can include the destination of a connection that failed. It stays on your computer and starts empty each time the connection is switched on.</li>
+  <li><strong>WireGuard file:</strong> with “My own server”, the file you choose is copied to the same folder. Its key is used only to connect to your server.</li>
+  <li><strong>Diagnostic report:</strong> created only when you press the button, and it stays on your computer. It contains your network card names and addresses, your settings and the last 40 log lines; it never contains the WireGuard key. Sharing it is up to you.</li>
+</ul>
+
+<h2>Requests to the internet</h2>
+<ul>
+  <li><strong>Domain name lookups:</strong> while connected, DNS lookups go encrypted to Cloudflare’s 1.1.1.1 resolver, which handles them under its own privacy policy.</li>
+  <li><strong>Ad lists:</strong> if you turn on ad blocking, lists are downloaded from the addresses shown in the app.</li>
+  <li><strong>Tunnel:</strong> with WARP, traffic goes through Cloudflare WARP; with “My own server”, through your server. Their own policies apply.</li>
+  <li><strong>Connectivity check:</strong> after you switch the connection on, an empty HTTPS request goes to Cloudflare (1.1.1.1) every 15 seconds to see whether the internet really works; if it gets no answer, Quad9 (dns.quad9.net) is asked too. It continues after the watchdog closes the tunnel, until the internet is back; it stops when you switch the connection off. These requests carry no information about you.</li>
+  <li><strong>Cloudflare WARP:</strong> if a tunneled flow uses WARP, EgressFork switches the WARP app to “proxy” mode and sets the previous mode back when you switch the connection off.</li>
+</ul>
+
+<h2>Children</h2>
+<p>EgressFork is not directed at children and does not knowingly collect data from children.</p>
+
+<h2>Changes and contact</h2>
+<p>If this policy changes, this page and its date are updated. Questions: <a href="mailto:fustademo@gmail.com">fustademo@gmail.com</a> (the <strong>Contact</strong> link in the app writes to the same address).</p>
+</section>
+</main>
+</body>
+</html>
