@@ -34,7 +34,7 @@
   <li><strong>Ağ kartlarının adları ve kimlikleri:</strong> Seçtiğiniz kartı yeniden bulabilmek için ayar dosyasına yazılır.</li>
   <li><strong>Ayarlar, reklam listeleri ve günlük:</strong> <code>%ProgramData%\EgressFork</code> klasöründe durur; bu klasöre yalnız yöneticiler yazabilir. Uygulama kaldırılınca bu klasör kendiliğinden silinmez; isterseniz siz silebilirsiniz.</li>
   <li><strong>Günlük (egressfork.log):</strong> Yalnız uyarı ve hataları tutar; kurulamayan bağlantıların hedef adresleri bu satırlarda yer alabilir. Bilgisayarınızda kalır ve her bağlantı açılışında silinip yeniden başlar.</li>
-  <li><strong>WireGuard dosyası:</strong> “Kendi sunucum” seçeneğinde verdiğiniz dosya aynı klasöre kopyalanır. İçindeki anahtar yalnız sizin sunucunuza bağlanmak için kullanılır.</li>
+  <li><strong>WireGuard dosyası:</strong> “Kendi sunucum” seçeneğinde verdiğiniz dosya aynı klasöre kopyalanır. İçindeki anahtar yalnız sizin sunucunuza bağlanmak için kullanılır. Yalnız yöneticilerin açabildiği <code>gizli</code> alt klasöründe durur; WARP’a geçince silinir, uygulama kaldırılınca silinmez, isterseniz klasörü siz silebilirsiniz.</li>
   <li><strong>Teşhis raporu:</strong> Yalnız düğmeye bastığınızda oluşturulur ve bilgisayarınızda kalır. Ağ kartlarınızın adlarını ve adreslerini, ayarlarınızı ve günlüğün son 40 satırını içerir; WireGuard anahtarı içermez. Paylaşıp paylaşmamak size kalmıştır.</li>
 </ul>
 
@@ -69,7 +69,7 @@
   <li><strong>Network card names and identifiers:</strong> written to the settings file so the chosen card can be found again.</li>
   <li><strong>Settings, ad lists and the log:</strong> kept in <code>%ProgramData%\EgressFork</code>, which only administrators can write to. Uninstalling does not remove this folder; you can delete it yourself.</li>
   <li><strong>Log (egressfork.log):</strong> holds warnings and errors only; these lines can include the destination of a connection that failed. It stays on your computer and starts empty each time the connection is switched on.</li>
-  <li><strong>WireGuard file:</strong> with “My own server”, the file you choose is copied to the same folder. Its key is used only to connect to your server.</li>
+  <li><strong>WireGuard file:</strong> with “My own server”, the file you choose is copied to the same folder. Its key is used only to connect to your server. It is kept in the <code>gizli</code> subfolder, which only administrators can open; it is deleted when you switch to WARP, but not when you uninstall the app, so delete the folder yourself if you want it gone.</li>
   <li><strong>Diagnostic report:</strong> created only when you press the button, and it stays on your computer. It contains your network card names and addresses, your settings and the last 40 log lines; it never contains the WireGuard key. Sharing it is up to you.</li>
 </ul>
 
