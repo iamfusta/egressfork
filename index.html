@@ -21,6 +21,10 @@
   nav, footer { color: var(--soluk); }
   nav a, footer a { color: var(--soluk); }
   a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+  figure img { cursor: zoom-in; }
+  #buyut { border: 0; padding: 0; background: transparent; max-width: 96vw; max-height: 96vh; }
+  #buyut::backdrop { background: rgb(0 0 0 / 0.82); }
+  #buyut img { width: auto; max-width: 96vw; max-height: 96vh; margin: 0; border: 0; cursor: zoom-out; }
 </style>
 </head>
 <body>
@@ -137,5 +141,16 @@
 
 <footer id="lisanslar"><p>EgressFork · iamfusta · Açık kaynaklı <a href="https://github.com/SagerNet/sing-box/tree/v1.14.4">sing-box 1.14.4</a> (GPL-3.0) ile çalışır / powered by it.</p></footer>
 </main>
+<dialog id="buyut" aria-label="Görsel / Image"><img alt=""></dialog>
+<script>
+  const kutu = document.getElementById('buyut'), buyuk = kutu.querySelector('img');
+  document.querySelectorAll('figure img').forEach(k => {
+    k.tabIndex = 0;
+    const ac = () => { buyuk.src = k.src; buyuk.alt = k.alt; kutu.showModal(); };
+    k.addEventListener('click', ac);
+    k.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ac(); } });
+  });
+  kutu.addEventListener('click', () => kutu.close());
+</script>
 </body>
 </html>
